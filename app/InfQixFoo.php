@@ -2,7 +2,7 @@
 
 namespace App;
 
-class FooBarQix
+class InfQixFoo
 {
 
     private int $number;
@@ -14,18 +14,18 @@ class FooBarQix
 
     public function replaceSpecialNumbers(): string
     {
-        if ($this->number % 3 == 0 && $this->number % 5 == 0 && $this->number % 7 == 0) {
-            $replaced = "Foo, Bar, Qix";
-        } else if ($this->number % 3 == 0 && $this->number % 5 == 0) {
-            $replaced = "Foo, Bar";
+        if ($this->number % 3 == 0 && $this->number % 8 == 0 && $this->number % 7 == 0) {
+            $replaced = "Inf, Qix, Foo";
+        } else if ($this->number % 3 == 0 && $this->number % 8 == 0) {
+            $replaced = "Inf, Foo";
         } else if ($this->number % 3 == 0 && $this->number % 7 == 0) {
-            $replaced = "Foo, Qix";
-        } else if ($this->number % 5 == 0 && $this->number % 7 == 0) {
-            $replaced = "Bar, Qix";
+            $replaced = "Qix, Foo";
+        } else if ($this->number % 8 == 0 && $this->number % 7 == 0) {
+            $replaced = "Inf, Qix";
         } else if ($this->number % 3 == 0) {
             $replaced = "Foo";
-        } else if ($this->number % 5 == 0) {
-            $replaced = "Bar";
+        } else if ($this->number % 8 == 0) {
+            $replaced = "Inf";
         } else if ($this->number % 7 == 0) {
             $replaced = "Qix";
         } else {
@@ -41,8 +41,8 @@ class FooBarQix
         for ($i = 0; $i < strlen($number); $i++) {
             if ($number[$i] == 3) {
                 $occurrence[] = "Foo";
-            } else if ($number[$i] == 5) {
-                $occurrence[] = "Bar";
+            } else if ($number[$i] == 8) {
+                $occurrence[] = "Inf";
             } else if ($number[$i] == 7) {
                 $occurrence[] = "Qix";
             }

@@ -25,7 +25,7 @@ test("If the number is multiple of both 3 & 8 but not 7, the program should retu
 
 test("If the number is multiple of both 3 & 7 but not 8, the program should return - Qix, Foo", function () {
     $number = new InfQixFoo(21);
-    expect($number->replaceSpecialNumbers())->toEqual("Foo, Qix");
+    expect($number->replaceSpecialNumbers())->toEqual("Qix, Foo");
 });
 
 test("If the number is multiple of both 8 & 7 but not 3, the program should return - Inf, Qix", function () {
@@ -63,20 +63,20 @@ test("If given number contains number 7 but not numbers 3 or 8, the program shou
 
 test("If given number contains number 3 and is multiple of 3 program should return - Foo, Foo", function () {
     $number = new InfQixFoo(3);
-    expect($number->ReplaceNumbersAndCheckOccurances())->toEqual("Foo, Foo");
+    expect($number->ReplaceNumbersAndCheckOccurrences())->toEqual("Foo, Foo");
 });
 
 test("If given number contains number 8 and is multiple of 8 program should return - Inf, Inf", function () {
     $number = new InfQixFoo(8);
-    expect($number->ReplaceNumbersAndCheckOccurances())->toEqual("Inf, Inf");
+    expect($number->ReplaceNumbersAndCheckOccurrences())->toEqual("Inf, Inf");
 });
 
 test("If given number contains number 7 and is multiple of 7 program should return - Qix, Qix", function () {
     $number = new InfQixFoo(7);
-    expect($number->ReplaceNumbersAndCheckOccurances())->toEqual("Qix, Qix");
+    expect($number->ReplaceNumbersAndCheckOccurrences())->toEqual("Qix, Qix");
 });
 
 test("Number 537 should return Foo, Bar, Foo, Qix", function () {
     $number = new InfQixFoo(837);
-    expect($number->ReplaceNumbersAndCheckOccurances())->toEqual("Foo, Inf, Foo, Qix");
+    expect($number->ReplaceNumbersAndCheckOccurrences())->toEqual("Foo, Inf, Foo, Qix");
 });
