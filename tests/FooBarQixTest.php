@@ -1,5 +1,7 @@
 <?php
 
+use App\FooBarQix;
+
 test("If given number is multiple of 3 the program should return Foo", function () {
     $number = new FooBarQix(3);
     expect($number->replaceSpecialNumbers())->toEqual("Foo");
