@@ -29,7 +29,12 @@ test("If the number is multiple of both 3 & 7 but not 5, the program should retu
 
 test("If the number is multiple of both 5 & 7 but not 3, the program should return - Bar, Qix", function () {
     $number = new FooBarQix(35);
-    expect($number->replaceSpecialNumbers())->toEqual("Foo, Qix");
+    expect($number->replaceSpecialNumbers())->toEqual("Bar, Qix");
+});
+
+test("If the number is multiple of 3, 5 and 7, the program should return - Foo, Bar, Qix", function () {
+    $number = new FooBarQix(105);
+    expect($number->replaceSpecialNumbers())->toEqual("Foo, Bar, Qix");
 });
 
 test("If given number is not a multiple of 3, 5 or 7 the program should return the number as string", function () {
