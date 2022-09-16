@@ -49,12 +49,12 @@ test("If given number contains number 3 but not numbers 5 or 7, the program shou
     expect($number->CheckOccurrences())->toEqual("Foo");
 });
 
-test("If given number contains number 5 but not numbers 3 or 7, the program should return - Foo", function () {
+test("If given number contains number 5 but not numbers 3 or 7, the program should return - Bar", function () {
     $number = new FooBarQix(15);
     expect($number->CheckOccurrences())->toEqual("Bar");
 });
 
-test("If given number contains number 7 but not numbers 3 or 5, the program should return - Foo", function () {
+test("If given number contains number 7 but not numbers 3 or 5, the program should return - Qix", function () {
     $number = new FooBarQix(17);
     expect($number->CheckOccurrences())->toEqual("Qix");
 });

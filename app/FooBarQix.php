@@ -14,22 +14,44 @@ class FooBarQix
 
     public function replaceSpecialNumbers(): string
     {
-        if ($this->number % 3 == 0 && $this->number % 5 == 0 && $this->number % 7 == 0){
-            return "Foo, Bar, Qix";
+        if ($this->number % 3 == 0 && $this->number % 5 == 0 && $this->number % 7 == 0) {
+            $replaced = "Foo, Bar, Qix";
         } else if ($this->number % 3 == 0 && $this->number % 5 == 0) {
-            return "Foo, Bar";
+            $replaced = "Foo, Bar";
         } else if ($this->number % 3 == 0 && $this->number % 7 == 0) {
-            return "Foo, Qix";
+            $replaced = "Foo, Qix";
         } else if ($this->number % 5 == 0 && $this->number % 7 == 0) {
-            return "Bar, Qix";
+            $replaced = "Bar, Qix";
         } else if ($this->number % 3 == 0) {
-            return "Foo";
+            $replaced = "Foo";
         } else if ($this->number % 5 == 0) {
-            return "Bar";
+            $replaced = "Bar";
         } else if ($this->number % 7 == 0) {
-            return "Qix";
+            $replaced = "Qix";
         } else {
-            return $this->number;
+            $replaced = $this->number;
         }
+
+        return $replaced;
+    }
+
+    public function CheckOccurrences()
+    {
+        $number = strval($this->number);
+        for ($i = 0; $i < strlen($number); $i++) {
+            if ($number[$i] == 3) {
+                $occurance[] = "Foo";
+            } else if ($number[$i] == 5) {
+                $occurance[] = "Bar";
+            } else if ($number[$i] == 7) {
+                $occurance[] = "Qix";
+            }
+        }
+        return implode(", ", $occurance);
+    }
+
+    public function ReplaceNumbersAndCheckOccurances()
+    {
+        return $this->replaceSpecialNumbers() . ", " . $this->CheckOccurrences();
     }
 }
