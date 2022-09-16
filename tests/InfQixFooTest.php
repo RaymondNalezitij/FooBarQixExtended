@@ -76,7 +76,17 @@ test("If given number contains number 7 and is multiple of 7 program should retu
     expect($number->ReplaceNumbersAndCheckOccurrences())->toEqual("Qix, Qix");
 });
 
-test("Number 537 should return Foo, Bar, Foo, Qix", function () {
+test("Number 537 should return Foo, Inf, Foo, Qix", function () {
     $number = new InfQixFoo(837);
     expect($number->ReplaceNumbersAndCheckOccurrences())->toEqual("Foo, Inf, Foo, Qix");
+});
+
+test("Number 2688 should return Inf, Qix, FooInf", function () {
+    $number = new InfQixFoo(2688);
+    expect($number->CheckIfNumberSumIsMultipleOfEight())->toEqual("Inf, Qix, FooInf");
+});
+
+test("Number 161 should return QixInf", function () {
+    $number = new InfQixFoo(161);
+    expect($number->CheckIfNumberSumIsMultipleOfEight())->toEqual("Inf, Qix, FooInf");
 });
