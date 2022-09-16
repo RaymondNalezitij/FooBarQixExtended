@@ -37,6 +37,7 @@ class InfQixFoo
 
     public function CheckOccurrences(): string
     {
+        $occurrence = [];
         $number = strval($this->number);
         for ($i = 0; $i < strlen($number); $i++) {
             if ($number[$i] == 3) {
@@ -52,6 +53,20 @@ class InfQixFoo
 
     public function ReplaceNumbersAndCheckOccurrences(): string
     {
-        return $this->replaceSpecialNumbers() . ", " . $this->CheckOccurrences();
+        if ($this->CheckOccurrences() == ""){
+            return $this->replaceSpecialNumbers();
+        } else {
+            return $this->replaceSpecialNumbers() . ", " . $this->CheckOccurrences();
+        }
+    }
+
+    public function CheckIfNumberSumIsMultipleOfEight(): string
+    {
+        $number = strval($this->number);
+        if(($number[0] + $number[1] + $number[2])%8 == 0){
+            return $this->ReplaceNumbersAndCheckOccurrences()."Inf";
+        } else {
+            return $this->ReplaceNumbersAndCheckOccurrences();
+        }
     }
 }

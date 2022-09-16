@@ -37,6 +37,7 @@ class FooBarQix
 
     public function CheckOccurrences(): string
     {
+        $occurrence = [];
         $number = strval($this->number);
         for ($i = 0; $i < strlen($number); $i++) {
             if ($number[$i] == 3) {
@@ -52,6 +53,10 @@ class FooBarQix
 
     public function ReplaceNumbersAndCheckOccurrences(): string
     {
-        return $this->replaceSpecialNumbers() . ", " . $this->CheckOccurrences();
+        if ($this->CheckOccurrences() == ""){
+            return $this->replaceSpecialNumbers();
+        } else {
+            return $this->replaceSpecialNumbers() . ", " . $this->CheckOccurrences();
+        }
     }
 }

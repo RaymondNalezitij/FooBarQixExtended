@@ -81,12 +81,12 @@ test("Number 537 should return Foo, Inf, Foo, Qix", function () {
     expect($number->ReplaceNumbersAndCheckOccurrences())->toEqual("Foo, Inf, Foo, Qix");
 });
 
-test("Number 2688 should return Inf, Qix, FooInf", function () {
+test("Number 2688 should return Inf, Qix, Foo, Inf, InfInf", function () {
     $number = new InfQixFoo(2688);
-    expect($number->CheckIfNumberSumIsMultipleOfEight())->toEqual("Inf, Qix, FooInf");
+    expect($number->CheckIfNumberSumIsMultipleOfEight())->toEqual("Inf, Qix, Foo, Inf, InfInf");
 });
 
 test("Number 161 should return QixInf", function () {
     $number = new InfQixFoo(161);
-    expect($number->CheckIfNumberSumIsMultipleOfEight())->toEqual("Inf, Qix, FooInf");
+    expect($number->CheckIfNumberSumIsMultipleOfEight())->toEqual("QixInf");
 });
